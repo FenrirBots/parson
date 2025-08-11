@@ -267,6 +267,8 @@ size_t          json_string_len(const JSON_Value *value); /* doesn't account for
 double          json_number (const JSON_Value *value);
 int             json_boolean(const JSON_Value *value);
 
+/* Returns the string version of the type */
+const char *json_type_to_string(JSON_Value_Type type);
 #ifdef __cplusplus
 }
 #endif

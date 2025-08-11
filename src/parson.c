@@ -2484,3 +2484,35 @@ void json_set_float_serialization_format(const char *format) {
 void json_set_number_serialization_function(JSON_Number_Serialization_Function func) {
     parson_number_serialization_function = func;
 }
+
+const char *json_type_to_string(JSON_Value_Type type)
+{
+    const char *string = "unknown";
+
+    switch (type)
+    {
+    case JSONError:
+        string = "error";
+        break;
+    case JSONNull:
+        string = "null";
+        break;
+    case JSONString:
+        string = "string";
+        break;
+    case JSONNumber:
+        string = "number";
+        break;
+    case JSONObject:
+        string = "object";
+        break;
+    case JSONArray:
+        string = "array";
+        break;
+    case JSONBoolean:
+        string = "boolean";
+        break;
+    }
+
+    return string;
+}
